@@ -1,0 +1,17 @@
+version: "2.4"
+services:
+  iris-xgb-server:
+    container_name: iris-xgb-server
+    image: nvcr.io/nvidia/tritonserver:22.04-py3
+    command: tritonserver --model-repository=/model_repository --model-control-mode=explicit --load-model iris_xgboost --trace-file=/tmp/trace.json --trace-rate=100 --trace-level=MAX
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+      - "8002:8002"
+    volumes:
+      - ./model_repository:/model_repository
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8002/metrics"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
