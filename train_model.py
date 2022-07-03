@@ -69,7 +69,7 @@ output [
     dims: [ {num_classes} ]
 }}
 ]
-instance_group [{{ kind: 'KIND_GPU' }}]
+instance_group [{{ kind: KIND_GPU }}]
 parameters [
 {{
     key: "model_type"
