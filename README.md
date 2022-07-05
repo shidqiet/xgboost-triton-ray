@@ -23,14 +23,15 @@ docker-compose up
 ```
 
 ## Build app docker image
+
 ```bash
 ./build.sh
 ```
 
 ## Launch app service
+
 ```bash
 ./deploy.sh
-```
 
 ### Test inference
 
