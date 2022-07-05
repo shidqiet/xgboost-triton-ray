@@ -6,20 +6,15 @@
 - [x] Deploy model using GPU
 - [x] Ray serve deployment module
 - [x] Dockerfile for client service
-- [ ] Client service launcher
+- [x] Client service launcher
 - [x] Requirements.txt
 - [ ] Comment, Docstring and link to references
+- [ ] Make a decent explanation in Readme
 
 ## Train and generate model repository directory
 
 ```bash
 python3 train_model.py
-```
-
-## Launch triton server
-
-```bash
-docker-compose up
 ```
 
 ## Build app docker image
@@ -28,10 +23,10 @@ docker-compose up
 ./build.sh
 ```
 
-## Launch app service
+## Launch triton server and client service
 
 ```bash
-./deploy.sh
+docker-compose up
 ```
 
 ## Test inference
