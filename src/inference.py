@@ -1,9 +1,5 @@
-import sys
-import logging
-
-import numpy as np
-
 # make triton_client
+import sys
 import tritonclient.grpc as grpcclient
 url = "localhost:8001"
 client = grpcclient
@@ -14,30 +10,15 @@ except Exception as e:
     print("channel creation failed: " + str(e))
     sys.exit()
 
-def add_log_handler(logger: logging.Logger, log_level: int):
-    """
-    Handlers will be added to the logger:
-    - StreamHandler
-    """
-
-    log_formatter = logging.Formatter(
-        "[%(levelname)s %(asctime)s.%(msecs)03d %(filename)s:%(lineno)d] %(message)s",
-        "%y%m%d %H:%M:%S")
-    logger_stream_handler = logging.StreamHandler()
-    logger_stream_handler.setLevel(log_level)
-    logger_stream_handler.setFormatter(log_formatter)
-    logger.addHandler(logger_stream_handler)
+import numpy as np
 
 class IRIS_ENGINE:
     """
     Xgboost model trained on Iris Dataset Deployment Class
     """
 
-    def __init__(self):
-        self.logger = logging.Logger("IRIS_ENGINE")
-        self.logger.setLevel(logging.INFO)
-        self.logger.propagate = False
-        add_log_handler(self.logger, logging.INFO)
+    def __init__(self, logger=None):
+        self.logger = logger
 
         self.model_name = 'iris_xgboost'
         self.model_version = '1'
@@ -76,7 +57,3 @@ class IRIS_ENGINE:
                         outputs=self.outputs)
         prediction = response.as_numpy('output__0')[0]
         return prediction
-
-if __name__ == "__main__":
-    iris_engine = IRIS_ENGINE()
-    print(iris_engine.infer(np.zeros(shape=(1, 1, 4), dtype=np.float32)))
