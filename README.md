@@ -3,8 +3,8 @@
 - [x] Training script
 - [x] Triton server service launcher
 - [x] Client wrapper
-- [ ] Deploy model using GPU
-- [ ] Ray serve deployment module
+- [x] Deploy model using GPU
+- [x] Ray serve deployment module
 - [ ] Dockerfile for client service
 - [ ] Client service launcher
 - [ ] Requirements.txt
@@ -22,8 +22,18 @@ python3 train_model.py
 docker-compose up
 ```
 
+## Launch app
+```bash
+./launch.sh
+```
+
+## Stop app
+```bash
+./stop.sh
+```
+
 ### Test inference
 
 ```bash
-python3 infer.py
+python3 test_infer.py
 ```
