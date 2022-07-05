@@ -18,3 +18,18 @@ services:
         interval: 30s
         timeout: 10s
         retries: 5
+  iris-xgb-client:
+    container_name: iris-xgb-client
+    image: iris-app:latest
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=0
+      - TRITON_SERVER=iris-xgb-server
+    ports:
+      - "8265:8265"
+      - "6060:6060"
+    links:
+      - iris-xgb-server:iris-xgb-server
+    ipc: "host"
+    stdin_open: true # NOTE: temporary solution to make the process blocking
+    tty: true        # NOTE: temporary solution to make the process blocking

@@ -1,7 +1,10 @@
 # make triton_client
+import os
 import sys
 import tritonclient.grpc as grpcclient
-url = "localhost:8001"
+
+triton_server_url = os.getenv('TRITON_SERVER', 'localhost')
+url = triton_server_url+":8001"
 client = grpcclient
 try:
     triton_client = client.InferenceServerClient(
