@@ -5,9 +5,9 @@
 - [x] Client wrapper
 - [x] Deploy model using GPU
 - [x] Ray serve deployment module
-- [ ] Dockerfile for client service
+- [x] Dockerfile for client service
 - [ ] Client service launcher
-- [ ] Requirements.txt
+- [x] Requirements.txt
 - [ ] Comment, Docstring and link to references
 
 ## Train and generate model repository directory
@@ -22,15 +22,16 @@ python3 train_model.py
 docker-compose up
 ```
 
-## Launch app
+## Build app docker image
+
 ```bash
-./launch.sh
+./build.sh
 ```
 
-## Stop app
+## Launch app service
+
 ```bash
-./stop.sh
-```
+./deploy.sh
 
 ### Test inference
 

@@ -1,0 +1,2 @@
+ray[serve]>=1.9.1
+starlette>=0.17.1
