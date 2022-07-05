@@ -32,8 +32,9 @@ docker-compose up
 
 ```bash
 ./deploy.sh
+```
 
-### Test inference
+## Test inference
 
 ```bash
 python3 test_infer.py
