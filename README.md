@@ -1,15 +1,4 @@
-# Deployment of XGBoost model using Triton Inference Server FIL backend and Ray Serve
-
-- [x] Training script
-- [x] Triton server service launcher
-- [x] Client wrapper
-- [x] Deploy model using GPU
-- [x] Ray serve deployment module
-- [x] Dockerfile for client service
-- [x] Client service launcher
-- [x] Requirements.txt
-- [ ] Comment, Docstring and link to references
-- [ ] Make a decent explanation in Readme
+# Deployment of XGBoost model using Triton Inference Server and Ray Serve
 
 ## Train and generate model repository directory
 
@@ -17,7 +6,7 @@
 python3 train_model.py
 ```
 
-## Build app docker image
+## Build client docker image
 
 ```bash
 ./build.sh
