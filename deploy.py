@@ -1,3 +1,13 @@
+"""
+Main deployment file
+
+Use Ray Serve and Fast API to:
+- handle inference request
+- preprocess request
+- pass on the processed request
+- postprocess and returning inference result
+"""
+
 import argparse
 import logging
 

@@ -1,1 +1,0 @@
-docker run -dit --net host iris-app:latest

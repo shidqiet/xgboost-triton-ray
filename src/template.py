@@ -1,3 +1,7 @@
+"""
+Template for request and inference using pydantic BaseModel
+"""
+
 from pydantic import BaseModel, confloat
 
 class RequestData(BaseModel):

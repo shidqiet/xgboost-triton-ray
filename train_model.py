@@ -1,3 +1,11 @@
+"""
+Train XGBoost model and automatically generate Triton model repository
+
+reference:
+https://www.kdnuggets.com/2017/03/simple-xgboost-tutorial-iris-dataset.html
+https://github.com/triton-inference-server/fil_backend/blob/main/notebooks/categorical-fraud-detection/Fraud_Detection_Example.ipynb
+"""
+
 import os
 import numpy as np
 import xgboost as xgb

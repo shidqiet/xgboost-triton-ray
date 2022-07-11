@@ -1,3 +1,7 @@
+"""
+Test requesting inference via HTTP POST
+"""
+
 import requests
 import json
 
